@@ -227,7 +227,7 @@ def crack_menu():
 		try:
 			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
 			op = json.loads(jok.text)
-			hamza('\033[1;97m[✓] Account Name \033[1;97m:\033[1;97m '+op['name'])
+			z = op['name']
 		except KeyError:
 			print"[!] ID Not Found!"
 			raw_input("\nPress Enter To Back  ")
