@@ -265,7 +265,7 @@ def log_cookie():
 			
 #Menu
 def menu():
-	os.system('clear')
+    os.system('clear')
     
     try:
         token = open('access_token.txt', 'r').read()
