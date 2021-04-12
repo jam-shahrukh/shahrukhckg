@@ -135,7 +135,6 @@ def menu():
 	os.system("clear")
 	print banner
 	print "  \033[1;92mLogged in user: " + z
-	print "|[✓] ID  : "+id
 	print (47*"-")
 	print "[1] Start Cloning."
 	print "[2] Clone With Pass Choice."
