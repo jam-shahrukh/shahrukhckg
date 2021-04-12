@@ -235,7 +235,10 @@ def crack_menu():
 		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
 		z = json.loads(r.text)
 		for i in z['data']:
-			id.append(i['id'])
+			uid = i['id']
+                        na = i['name']
+                        nm = na.rsplit(' ')[0]
+                        id.append(uid + '|' + nm)
 	elif crm =="3":
 	    os.system('clear')
 	    print banner
