@@ -34,6 +34,40 @@ header = {
     'x-fb-http-engine': 'Liger' }
 os.system('git pull')
 os.system('clear')
+def exit():
+	print "[!] Exit"
+	os.sys.exit()
+
+
+def acak(b):
+    w = 'ahtdzjc'
+    d = ''
+    for i in x:
+        d += '!'+w[random.randint(0,len(w)-1)]+i
+    return cetak(d)
+
+
+def cetak(b):
+    w = 'ahtdzjc'
+    for i in w:
+        j = w.index(i)
+        x= x.replace('!%s'%i,'\033[%s;1m'%str(31+j))
+    x += '\033[0m'
+    x = x.replace('!0','\033[0m')
+    sys.stdout.write(x+'\n')
+
+
+def hamza(z):
+	for e in z + '\n':
+		sys.stdout.write(e)
+		sys.stdout.flush()
+		time.sleep(0.03)
+def hopss(z):
+	for e in z + '\n':
+		sys.stdout.write(e)
+		sys.stdout.flush()
+		time.sleep(0.1)
+		
 c = "\033[1;32m""\033[0;97m""\033[1;32m"
 c2 = "\033[0;97m""\033[1;32m""\033[0;97m"
 c3 = "\033[1;31m""\033[0;97m""\033[1;31m"
