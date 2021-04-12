@@ -298,19 +298,19 @@ def menu():
         print ''
         raw_input(' \033[1;92mPress enter after turning on mobile data/wifi ')
         menu()
-	os.system("clear")
-	print logo
-	print "  \033[1;92mLogged in user: " + z
-	print (47*"-")
-	print "[1] Start Cloning."
-	print "[2] Clone With Pass Choice."
-	print "[3] Grabbing Tools."
-	print "[4] Auto Del Tools."
-	print "[5] Update jam Tool."
-	print "[6] Follow Me On Facebook."
-	print "[7] Logout"
-	print ('                  ')
-	men()
+    os.system("clear")
+    print logo
+    print "  \033[1;92mLogged in user: " + z
+    print (47*"-")
+    print "[1] Start Cloning."
+    print "[2] Clone With Pass Choice."
+    print "[3] Grabbing Tools."
+    print "[4] Auto Del Tools."
+    print "[5] Update jam Tool."
+    print "[6] Follow Me On Facebook."
+    print "[7] Logout"
+    print ('                  ')
+    men()
 
 def men():
 	rana = raw_input("Choose Option >>  ")
